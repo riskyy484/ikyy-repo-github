@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.shining-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #111;
+  position: relative;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #000, #111, #000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shining-text::before {
+  content: "MEMBUKA WEBSITE RISKYY NEXX";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 255, 255, 0.8), 
+    transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.glow {
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+.scan-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 200, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: scan 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.dot:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes scan {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-15px); opacity: 1; }
+}
+
+.bio-data {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.bio-header, .bio-description {
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out forwards;
+}
+
+.bio-header {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.bio-description {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.bio-list {
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out forwards;
+}
+
+.bio-list li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeInItem 1s ease-in-out forwards;
+}
+
+.bio-list li:nth-child(1) { animation-delay: 1s; }
+.bio-list li:nth-child(2) { animation-delay: 1.2s; }
+.bio-list li:nth-child(3) { animation-delay: 1.4s; }
+.bio-list li:nth-child(4) { animation-delay: 1.6s; }
+.bio-list li:nth-child(5) { animation-delay: 1.8s; }
+.bio-list li:nth-child(6) { animation-delay: 2s; }
+.bio-list li:nth-child(7) { animation-delay: 2.2s; }
+.bio-list li:nth-child(8) { animation-delay: 2.4s; }
+.bio-list li:nth-child(9) { animation-delay: 2.6s; }
+.bio-list li:nth-child(10) { animation-delay: 2.8s; }
+.bio-list li:nth-child(11) { animation-delay: 3s; }
+
+.bio-list img {
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+a {
+  color: #00c8ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.action-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 12px 20px;
+  background-color: #00c8ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #008c99;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInItem {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
